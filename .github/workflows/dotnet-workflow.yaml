@@ -25,12 +25,7 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Test
-        run:  dotnet test --no-build -l "trx;LogFileName=test-results.trx;"
-      
-      - uses: actions/upload-artifact@v3
-        with:
-          name: coverage.opencover.xml
-          path: ./test/**/coverage.opencover.xml
+        run:  dotnet test -l "trx;LogFileName=test-results.trx;"
       - uses: actions/upload-artifact@v3
         name: Upload test results trx
         if: always()
