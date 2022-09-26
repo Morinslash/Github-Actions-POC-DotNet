@@ -37,9 +37,10 @@ jobs:
         with:
           name: test-results.trx
           path: ./**/**.trx
+          
   test-results:
     name: "Publish Tests Results"
-    needs: tests
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       checks: write
