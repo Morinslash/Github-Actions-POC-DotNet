@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Test
-        run:  dotnet test --no-build --collect:"XPlat Code Coverage" -l "trx;LogFileName=test-results.trx;" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        run:  dotnet test --no-build -l "trx;LogFileName=test-results.trx;"
       
       - uses: actions/upload-artifact@v3
         with:
